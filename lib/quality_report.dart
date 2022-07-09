@@ -1,12 +1,9 @@
 import 'dart:io';
 
 import 'package:args/args.dart';
-import 'package:quarty_report/src/model/test_case_coverage.dart';
+import 'package:quality_report/src/model/test_case_coverage.dart';
 
-void main(List<String> arguments) {
-  final parser = ArgParser();
-  parser.addOption('file', abbr: 'f', defaultsTo: 'coverage/lcov.info');
-  parser.addOption('target', abbr: 't', defaultsTo: 'lib/');
+void qualityReport(List<String> arguments, ArgParser parser) {
 
   final argResults = parser.parse(arguments);
 

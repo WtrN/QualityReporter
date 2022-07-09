@@ -3,13 +3,9 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:args/args.dart';
-import 'package:quarty_report/src/model/dart_metrics.dart';
+import 'package:quality_report/src/model/dart_metrics.dart';
 
-void main(List<String> arguments) {
-  final parser = ArgParser();
-  parser.addOption('file', abbr: 'f', defaultsTo: 'coverage/lcov.info');
-  parser.addOption('target', abbr: 't', defaultsTo: 'lib/');
-
+void metricsReport(List<String> arguments, ArgParser parser) {
   final argResults = parser.parse(arguments);
 
   final metricsFile = File(argResults['file']);
