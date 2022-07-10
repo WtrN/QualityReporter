@@ -9,6 +9,7 @@ void metricsReport(List<String> arguments, ArgParser parser) {
   final argResults = parser.parse(arguments);
 
   final metricsFile = File(argResults['file']);
+
   final Map<String, dynamic> metricsJson =
       jsonDecode(metricsFile.readAsStringSync());
 
@@ -20,7 +21,6 @@ void metricsReport(List<String> arguments, ArgParser parser) {
         .toList());
 
     final list = nestingLevelList.expand((element) => element);
-
     return list.map((e) => e.value).toList();
   }).toList();
 
